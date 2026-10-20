@@ -46,12 +46,12 @@ a { color: var(--accent) }
 <header>
   <h1>评审树进展：读得懂、对得上、修得准，检出率正在测</h1>
   <p class="lede">verifier 现在把 coding agent 的轨迹整理成一棵以题目为根的证据树：题目 → 目标 → 要求 → agent 的 claim → 证据，外加"未测情形"。树在评审之间传递，也能在 agent 干活时实时长出来。本页记录到目前为止做了什么、验证了什么、花多少、还缺什么。</p>
-  <p class="meta" id="updated">更新于 2026-10-20 09:28 · verifier 0.13 → 0.14.1 · 实验分支 exp/live-tree · 题目取自 Terminal-Bench 4 · judge gpt-6.1-sol</p>
+  <p class="meta" id="updated">更新于 2026-10-20 09:33 · verifier 0.13 → 0.14.1 · 实验分支 exp/live-tree · 题目取自 Terminal-Bench 4 · judge gpt-6.1-sol</p>
 </header>
 
 <div class="verdict">
   <div><b class="good">已做到</b><span>题目说的要求和评审自加的要求分开；节点 id 跨轮稳定；to_fix 精确到失败输入；Codex 一轮修好并通过 TB4 真测试</span></div>
-  <div><b class="warn">正在测</b><span>两种用法（评审自己建树 vs 监督员分段长树）在 20 份有真值的交付上的准确率与成本，A 6/20、B 3/20 已完成</span></div>
+  <div><b class="warn">正在测</b><span>两种用法（评审自己建树 vs 监督员分段长树）在 20 份有真值的交付上的准确率与成本，A 7/20、B 3/20 已完成</span></div>
   <div><b class="bad">做不到</b><span>树阶段自己的判断偏 good；评审没想到的情形不会出现在"未测"里</span></div>
 </div>
 
@@ -142,7 +142,7 @@ a { color: var(--accent) }
 <tr><td>html-m9_M2</td><td><span class="pill good">通过</span></td><td><span class="pill bad">bad</span> ✗</td><td class="n">3.61M</td><td class="n">21 分</td><td class="muted">进行中</td><td></td><td></td></tr>
 <tr><td>html-m9_M3</td><td><span class="pill bad">失败</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
 <tr><td>ks-s62_P2</td><td><span class="pill bad">失败</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
-<tr><td>ltg-s61_P1</td><td><span class="pill bad">失败</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
+<tr><td>ltg-s61_P1</td><td><span class="pill bad">失败</span></td><td><span class="pill warn">unproven</span> ·</td><td class="n">1.44M</td><td class="n">10 分</td><td class="muted">进行中</td><td></td><td></td></tr>
 <tr><td>mvcc-m3_M2</td><td><span class="pill good">通过</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
 <tr><td>mvcc-m3_M1</td><td><span class="pill bad">失败</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
 <tr><td>risk-s62_P1</td><td><span class="pill good">通过</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
@@ -154,7 +154,7 @@ a { color: var(--accent) }
 <tr><td>vf2-s61_P1</td><td><span class="pill bad">失败</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
 <tr><td>wal-s62_P1</td><td><span class="pill good">通过</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
 <tr><td>wal-m3_M1</td><td><span class="pill bad">失败</span></td><td class="muted">进行中</td><td></td><td></td><td class="muted">进行中</td><td></td><td></td></tr>
-<tr><td colspan="8" class="muted">A：完成 6/20，判对 3，unproven 1，平均 judge 读入 2.43M；B：完成 3/20，判对 2，unproven 0，平均 judge 读入 1.93M。本页随结果更新。</td></tr>
+<tr><td colspan="8" class="muted">A：完成 7/20，判对 3，unproven 2，平均 judge 读入 2.29M；B：完成 3/20，判对 2，unproven 0，平均 judge 读入 1.93M。本页随结果更新。</td></tr>
 </table></div>
 <p>旧评审（0.9–0.10）在这 20 份上的底线：good 1 份（对）、bad 16 份（对 9）、unproven 3 份；8 份真通过只保住 1 份。</p>
 
